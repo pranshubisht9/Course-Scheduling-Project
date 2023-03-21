@@ -1,5 +1,6 @@
 package com.example.geektrust.entities;
 
+import com.example.geektrust.Utilities.FixedConstants;
 import com.example.geektrust.exceptions.InputErrorException;
 
 public class Employee {
@@ -27,7 +28,7 @@ public class Employee {
     }
 
     public Employee(String emailAddress) throws InputErrorException {
-        if (Constants.VALID_EMAIL_ADDRESS_REGEX.matcher(emailAddress).matches()) {
+        if (FixedConstants.VALID_EMAIL_ADDRESS_REGEX.matcher(emailAddress).matches()) {
             this.email = emailAddress;
             this.name = this.email.substring(0, this.email.indexOf('@'));
         } else {

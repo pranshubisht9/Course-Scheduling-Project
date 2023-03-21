@@ -1,5 +1,6 @@
 package com.example.geektrust.entities;
 
+import java.util.Date;
 import java.util.Map;
 
 public class Course implements Comparable<Course>{
@@ -70,6 +71,16 @@ public class Course implements Comparable<Course>{
         isAlotted = alotted;
     }
 
+    private Date date;
+
+    public Date getDate() {
+        return date;
+    }
+
+    public void setDate(Date date) {
+        this.date = date;
+    }
+
     public Map<String, Employee> getRegisterEmployee() {
         return registerEmployee;
     }
@@ -87,7 +98,7 @@ public class Course implements Comparable<Course>{
     public Course() {
     }
 
-    public Course(String courseId, String courseName, String instructor, long minCap, long maxCap, boolean isCancel, boolean isAlotted, Map<String, Employee> registerEmployee) {
+    public Course(String courseId, String courseName, String instructor, long minCap, long maxCap, boolean isCancel, boolean isAlotted, Map<String, Employee> registerEmployee, Date date) {
         this.courseId = courseId;
         this.courseName = courseName;
         this.instructor = instructor;
@@ -96,5 +107,6 @@ public class Course implements Comparable<Course>{
         this.isCancel = isCancel;
         this.isAlotted = isAlotted;
         this.registerEmployee = registerEmployee;
+        this.date = date;
     }
 }
