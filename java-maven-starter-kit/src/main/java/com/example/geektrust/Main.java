@@ -1,24 +1,39 @@
 package com.example.geektrust;
 
-import java.io.FileInputStream;
+import com.example.geektrust.entities.Command;
+import com.example.geektrust.exceptions.InputErrorException;
+
+import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.util.Scanner;
 
 public class Main {
-    public static void main(String[] args) {
+/*    public static void main(String[] args) {
+        *//*
+        Sample code to read from file passed as command line argument
 
-//        Sample code to read from file passed as command line argument
-/*        try {
-            // the file to be opened for reading
-            FileInputStream fis = new FileInputStream(args[0]);
-            Scanner sc = new Scanner(fis); // file to be scanned
-            // returns true if there is another line to read
-            while (sc.hasNextLine()) {
-               //Add your code here to process input commands
+         *//*
+        try {
+            if (args.length != 1) {
+                throw new FileNotFoundException("Input file is not supplied");
+            } else {
+                LearningManagementSystem lms = new LearningManagementSystem("Intuit");
+                FileProcesserService fileProcesserService = new FileProcesserService(args[0]);
+                try {
+                    try {
+                        Command command = fileProcesserService.processLine();
+                        while (command != null) {
+                            lms.fulfillCommand(command);
+                            command = fileProcesserService.processLine();
+                        }
+                    } catch (InputErrorException e) {
+                        System.out.println(e.getMessage());
+                    }
+                } catch (FileNotFoundException ex) {
+                    ex.printStackTrace();
+                }
             }
-            sc.close(); // closes the scanner
-        } catch (IOException e) {
-        }*/
-
-    }
+        } catch (IOException ex) {
+            ex.printStackTrace();
+        }
+    }*/
 }
