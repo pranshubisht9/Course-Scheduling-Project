@@ -8,17 +8,17 @@ public class CommandExeFactory {
         CommandExecutor executor = null;
         if(task!=null){
             switch(task.getInputCommand()){
-                case ALLOT:
-                    executor = new AllotedCourseImpl();
-                    break;
                 case ADD_COURSE_OFFERING:
                     executor = new AddCourseImpl();
                     break;
-                case REGISTER:
-                    executor = new RegisterCourseImpl();
-                    break;
                 case CANCEL:
                     executor = new CancelCourseImpl();
+                    break;
+                case ALLOT:
+                    executor = new AllotedCourseImpl();
+                    break;
+                case REGISTER:
+                    executor = new RegisterCourseImpl();
                     break;
                 default:
                     break;

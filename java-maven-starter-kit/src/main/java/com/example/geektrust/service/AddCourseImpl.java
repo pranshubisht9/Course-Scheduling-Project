@@ -16,8 +16,8 @@ public class AddCourseImpl implements CommandExecutor{
 
     @Override
     public void executeCommand(TreeMap<String, Course> courses, Map<String, Course> registrationIdCourseMap, Command command) throws InputErrorException {
-        List<String> params = command.getCommandParams();
-        Course course = constructCourseObject(params);
+        List<String> param = command.getCommandParams();
+        Course course = constructCourseObject(param);
         offerCourse(courses , course);
     }
 
