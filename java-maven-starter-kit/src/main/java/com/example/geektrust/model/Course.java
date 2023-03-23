@@ -1,85 +1,71 @@
 package com.example.geektrust.model;
 
-import java.util.Date;
-import java.util.Map;
-import java.util.TreeMap;
+import java.util.*;
 
 public class Course implements Comparable<Course>{
-    private final String courseId;
+    private final String courseID;
     private final String courseName;
     private final String instructor;
+    private final int minCap;
+    private final int maxCap;
     private final Date date;
-    private final int minCapacity;
-    private final int maxCapacity;
-    private boolean isAllotted;
+    private boolean isAllot;
     private boolean isCancel;
 
     private final Map<String , Employee> registerEmployees;
 
 
-    public Course(String courseId, String courseName, String instructor, Date date, int minCapacity, int maxCapacity, boolean isAllotted, boolean isCancelled) {
-        this.courseId = courseId;
+    public Course(String courseID, String courseName, String instructor, Date date, int minCapacity, int maxCapacity, boolean isAllotted, boolean isCancelled) {
+        this.courseID = courseID;
         this.courseName = courseName;
         this.instructor = instructor;
         this.date = date;
-        this.minCapacity = minCapacity;
-        this.maxCapacity = maxCapacity;
-        this.isAllotted = isAllotted;
+        this.minCap = minCapacity;
+        this.maxCap = maxCapacity;
+        this.isAllot = isAllotted;
         this.isCancel = isCancelled;
         registerEmployees = new TreeMap<>();
     }
-
     public String getCourseID() {
-        return courseId;
+        return courseID;
     }
-
     public String getCourseName() {
         return courseName;
     }
-
     public String getInstructor() {
         return instructor;
     }
-
     public Date getDate() {
         return date;
     }
-
     public int getMinCapacity() {
-        return minCapacity;
+        return minCap;
     }
-
     public int getMaxCapacity() {
-        return maxCapacity;
+        return maxCap;
     }
-
     public boolean isAllotted() {
-        return isAllotted;
+        return isAllot;
     }
-
-    public boolean isCancel() {
+    public boolean isCancelled() {
         return isCancel;
     }
-
     public void setAllotted(boolean allotted) {
-        isAllotted = allotted;
+        isAllot = allotted;
     }
-
-    public void setCancel(boolean cancelled) {
+    public void setCancelled(boolean cancelled) {
         isCancel = cancelled;
     }
     public Map<String, Employee> getRegisterEmployees() {
         return registerEmployees;
     }
-
-    @Override
-    public int compareTo(Course o) {
-        return this.courseName.compareTo(o.courseName);
-    }
-
     public String addEmployee(Employee e){
         String registrationID = "REG-COURSE-"+e.getName()+"-"+this.courseName;
         this.registerEmployees.put(registrationID , e);
         return registrationID;
+    }
+    @Override
+    public int compareTo(Course o) {
+        return this.courseName.compareTo(o.courseName);
     }
 }

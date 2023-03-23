@@ -1,7 +1,11 @@
 package com.example.geektrust.utility;
 
+import com.example.geektrust.ServiceImpl.AddCourseImpl;
 import com.example.geektrust.model.Command;
-import com.example.geektrust.service.*;
+import com.example.geektrust.service.CommandExecutor;
+import com.example.geektrust.ServiceImpl.AllotCoursesImpl;
+import com.example.geektrust.ServiceImpl.CancelCourseImpl;
+import com.example.geektrust.ServiceImpl.RegisterCourseImpl;
 
 public class CommandExeFactory {
     public static CommandExecutor getExecutor(Command task) {
@@ -15,7 +19,7 @@ public class CommandExeFactory {
                     executor = new CancelCourseImpl();
                     break;
                 case ALLOT:
-                    executor = new AllotedCourseImpl();
+                    executor = new AllotCoursesImpl();
                     break;
                 case REGISTER:
                     executor = new RegisterCourseImpl();
