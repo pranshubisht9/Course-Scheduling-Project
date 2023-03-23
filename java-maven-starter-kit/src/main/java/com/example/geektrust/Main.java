@@ -1,8 +1,8 @@
 package com.example.geektrust;
 
-import com.example.geektrust.Utilities.LMS;
-import com.example.geektrust.entities.Command;
-import com.example.geektrust.exceptions.InputErrorException;
+import com.example.geektrust.utility.LMS;
+import com.example.geektrust.model.Command;
+import com.example.geektrust.exception.InputErrorException;
 import com.example.geektrust.service.FileProcesserService;
 
 import java.io.FileNotFoundException;

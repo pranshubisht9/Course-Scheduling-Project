@@ -1,7 +1,7 @@
-package com.example.geektrust.entities;
+package com.example.geektrust.model;
 
-import com.example.geektrust.Utilities.FixedConstants;
-import com.example.geektrust.exceptions.InputErrorException;
+import com.example.geektrust.utility.FixedConstants;
+import com.example.geektrust.exception.InputErrorException;
 
 public class Employee {
 

@@ -1,9 +1,9 @@
 package com.example.geektrust.service;
 
-import com.example.geektrust.Utilities.FixedConstants;
-import com.example.geektrust.entities.Command;
-import com.example.geektrust.entities.CommandOperator;
-import com.example.geektrust.exceptions.InputErrorException;
+import com.example.geektrust.utility.FixedConstants;
+import com.example.geektrust.model.Command;
+import com.example.geektrust.enums.CommandOperator;
+import com.example.geektrust.exception.InputErrorException;
 
 import java.util.Arrays;
 import java.util.List;

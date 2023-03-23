@@ -1,4 +1,4 @@
-package com.example.geektrust.Utilities;
+package com.example.geektrust.utility;
 
 import java.util.regex.Pattern;
 

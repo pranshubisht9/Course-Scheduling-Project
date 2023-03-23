@@ -1,6 +1,6 @@
-package com.example.geektrust.Utilities;
+package com.example.geektrust.utility;
 
-import com.example.geektrust.entities.Command;
+import com.example.geektrust.model.Command;
 import com.example.geektrust.service.*;
 
 public class CommandExeFactory {

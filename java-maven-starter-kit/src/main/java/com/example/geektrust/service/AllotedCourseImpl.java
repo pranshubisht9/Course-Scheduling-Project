@@ -1,15 +1,12 @@
 package com.example.geektrust.service;
 
-import com.example.geektrust.entities.Command;
-import com.example.geektrust.entities.Course;
-import com.example.geektrust.entities.Employee;
-import com.example.geektrust.exceptions.CourseException;
-import com.example.geektrust.exceptions.InputErrorException;
+import com.example.geektrust.model.Command;
+import com.example.geektrust.model.Course;
+import com.example.geektrust.model.Employee;
+import com.example.geektrust.exception.InputErrorException;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.List;
 import java.util.Map;
 import java.util.TreeMap;
 

@@ -1,4 +1,6 @@
-package com.example.geektrust.entities;
+package com.example.geektrust.model;
+
+import com.example.geektrust.enums.CommandOperator;
 
 import java.util.List;
 

@@ -1,4 +1,4 @@
-package com.example.geektrust.entities;
+package com.example.geektrust.enums;
 
 public enum CommandOperator {
     ADD_COURSE_OFFERING(5),

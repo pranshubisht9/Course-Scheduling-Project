@@ -1,4 +1,4 @@
-package com.example.geektrust.entities;
+package com.example.geektrust.model;
 
 import java.util.Date;
 import java.util.Map;

@@ -1,4 +1,4 @@
-package com.example.geektrust.exceptions;
+package com.example.geektrust.exception;
 
 public class InputErrorException extends Exception{
 

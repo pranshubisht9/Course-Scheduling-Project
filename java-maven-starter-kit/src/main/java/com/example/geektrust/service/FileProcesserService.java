@@ -1,7 +1,7 @@
 package com.example.geektrust.service;
 
-import com.example.geektrust.entities.Command;
-import com.example.geektrust.exceptions.InputErrorException;
+import com.example.geektrust.model.Command;
+import com.example.geektrust.exception.InputErrorException;
 
 import java.io.*;
 
