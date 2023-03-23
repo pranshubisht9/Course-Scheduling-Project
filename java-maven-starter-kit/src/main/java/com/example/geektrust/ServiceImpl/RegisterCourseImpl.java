@@ -6,12 +6,10 @@ import com.example.geektrust.model.Command;
 import com.example.geektrust.model.Course;
 import com.example.geektrust.model.Employee;
 import com.example.geektrust.service.CommandExecutor;
-
 import java.util.Map;
 import java.util.TreeMap;
-
-import static com.example.geektrust.utility.Constants.ACCEPTED;
-import static com.example.geektrust.utility.Constants.REJECTED;
+import static com.example.geektrust.utility.FixedConstants.ACCEPTED;
+import static com.example.geektrust.utility.FixedConstants.REJECTED;
 
 public class RegisterCourseImpl implements CommandExecutor {
 

@@ -3,12 +3,10 @@ package com.example.geektrust.ServiceImpl;
 import com.example.geektrust.model.Command;
 import com.example.geektrust.model.Course;
 import com.example.geektrust.service.CommandExecutor;
-
 import java.util.Map;
 import java.util.TreeMap;
-
-import static com.example.geektrust.utility.Constants.CANCEL_ACCEPTED;
-import static com.example.geektrust.utility.Constants.CANCEL_REJECTED;
+import static com.example.geektrust.utility.FixedConstants.CANCEL_ACCEPTED;
+import static com.example.geektrust.utility.FixedConstants.CANCEL_REJECTED;
 
 public class CancelCourseImpl implements CommandExecutor {
     @Override

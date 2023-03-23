@@ -3,7 +3,7 @@ package com.example.geektrust.service;
 import com.example.geektrust.enums.CommandOperator;
 import com.example.geektrust.exception.InvalidInputException;
 import com.example.geektrust.model.Command;
-import com.example.geektrust.utility.Constants;
+import com.example.geektrust.utility.FixedConstants;
 
 import java.util.Arrays;
 import java.util.List;
@@ -22,7 +22,7 @@ public class CommandService {
     public Command getCommandFromString(String input) throws InvalidInputException {
         try {
             String[] commandWithArguments = input.split(" ");
-            CommandOperator operator = CommandOperator.valueOf(Constants.getValue(commandWithArguments[0]));
+            CommandOperator operator = CommandOperator.valueOf(FixedConstants.getValue(commandWithArguments[0]));
             List<String> commandParams =
                     Arrays.stream(commandWithArguments).skip(1).collect(Collectors.toList());
             Command command = new Command(operator, commandParams);
