@@ -22,7 +22,7 @@ public class Employee {
         return name;
     }
 
-    public String getEmailAddress() {
+    public String getEmail() {
         return email;
     }
 }

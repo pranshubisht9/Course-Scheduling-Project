@@ -17,11 +17,11 @@ public class AllotedCourseImpl implements CommandExecutor{
             String courseId = command.getCommandParams().get(0);
             Course course = courses.get(courseId);
             if(course!=null){
-                if(course.getRegisterEmployee().size()<course.getMinCap()){
+                if(course.getRegisterEmployees().size()<course.getMinCapacity()){
                     course.setCancel(true);
                     printCourseData(course);
                 }else{
-                    course.setAlotted(true);
+                    course.setAllotted(true);
                     printCourseData(course);
                 }
             }else{
@@ -31,7 +31,7 @@ public class AllotedCourseImpl implements CommandExecutor{
 
         private void printCourseData(Course course) {
             String status = course.isCancel()?"COURSE_CANCELED":"CONFIRMED";
-            for(Map.Entry<String, Employee> e: course.getRegisterEmployee().entrySet()){
+            for(Map.Entry<String, Employee> e: course.getRegisterEmployees().entrySet()){
                 String pattern = "ddMMyyyy";
                 DateFormat df = new SimpleDateFormat(pattern);
                 System.out.println(e.getKey()+" "+e.getValue().getEmail()+" "+course.getCourseName()+" "+course.getCourseName()+" "+course.getInstructor()+" "
