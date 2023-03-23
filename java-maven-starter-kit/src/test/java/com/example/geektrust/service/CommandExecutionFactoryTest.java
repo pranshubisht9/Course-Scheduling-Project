@@ -1,9 +1,9 @@
 package com.example.geektrust.service;
 
+import com.example.geektrust.ServiceImpl.AddCourseImpl;
 import com.example.geektrust.exception.InvalidInputException;
 import com.example.geektrust.model.Command;
-import com.example.geektrust.utility.CommandExecutionFactory;
-import com.example.geektrust.ServiceImpl.AddCourseCommandExecutorImpl;
+import com.example.geektrust.utility.CommandExeFactory;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -17,7 +17,7 @@ public class CommandExecutionFactoryTest {
     }
     @Test
     public void getExecutorTest() {
-       Assertions.assertTrue(CommandExecutionFactory.getExecutor(c1) instanceof AddCourseCommandExecutorImpl);
-       Assertions.assertFalse(CommandExecutionFactory.getExecutor(c2) instanceof AddCourseCommandExecutorImpl);
+       Assertions.assertTrue(CommandExeFactory.getExecutor(c1) instanceof AddCourseImpl);
+       Assertions.assertFalse(CommandExeFactory.getExecutor(c2) instanceof AddCourseImpl);
     }
 }

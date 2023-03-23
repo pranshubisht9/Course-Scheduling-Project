@@ -3,7 +3,7 @@ package com.example.geektrust.service;
 import com.example.geektrust.exception.InvalidInputException;
 import com.example.geektrust.model.Command;
 import com.example.geektrust.model.Course;
-import com.example.geektrust.utility.CommandExecutionFactory;
+import com.example.geektrust.utility.CommandExeFactory;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -26,7 +26,7 @@ public class AllotCourseImplTest {
     public void setUp() throws InvalidInputException {
         System.setOut(new PrintStream(outContent));
         command = CommandService.getInstance().getCommandFromString("ALLOT OFFERING-JAVA-JAMES");
-        executor = CommandExecutionFactory.getExecutor(command);
+        executor = CommandExeFactory.getExecutor(command);
         courses = new TreeMap<>();
         registrationIdCourseMap = new HashMap<>();
     }

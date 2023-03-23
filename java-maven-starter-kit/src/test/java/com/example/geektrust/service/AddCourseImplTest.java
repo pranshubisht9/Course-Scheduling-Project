@@ -4,7 +4,7 @@ import com.example.geektrust.exception.CourseException;
 import com.example.geektrust.exception.InvalidInputException;
 import com.example.geektrust.model.Command;
 import com.example.geektrust.model.Course;
-import com.example.geektrust.utility.CommandExecutionFactory;
+import com.example.geektrust.utility.CommandExeFactory;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -27,7 +27,7 @@ public class AddCourseImplTest {
     public void setUp() throws InvalidInputException {
         System.setOut(new PrintStream(outContent));
         command1 = CommandService.getInstance().getCommandFromString("ADD-COURSE-OFFERING JAVA JAMES 15062022 1 2");
-        executor = CommandExecutionFactory.getExecutor(command1);
+        executor = CommandExeFactory.getExecutor(command1);
         courses = new TreeMap<>();
         registrationIdCourseMap = new HashMap<>();
     }

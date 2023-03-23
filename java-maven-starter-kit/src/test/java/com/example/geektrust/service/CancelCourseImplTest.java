@@ -4,7 +4,7 @@ import com.example.geektrust.exception.CourseException;
 import com.example.geektrust.exception.InvalidInputException;
 import com.example.geektrust.model.Command;
 import com.example.geektrust.model.Course;
-import com.example.geektrust.utility.CommandExecutionFactory;
+import com.example.geektrust.utility.CommandExeFactory;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -33,9 +33,9 @@ public class CancelCourseImplTest {
         command1 = CommandService.getInstance().getCommandFromString("ADD-COURSE-OFFERING JAVA JAMES 15062022 1 2");
         command2 = CommandService.getInstance().getCommandFromString("REGISTER ANDY@GMAIL.COM OFFERING-JAVA-JAMES");
         command3 = CommandService.getInstance().getCommandFromString("CANCEL REG-COURSE-ANDY-JAVA");
-        executor1 = CommandExecutionFactory.getExecutor(command1);
-        executor2 = CommandExecutionFactory.getExecutor(command2);
-        executor3 = CommandExecutionFactory.getExecutor(command3);
+        executor1 = CommandExeFactory.getExecutor(command1);
+        executor2 = CommandExeFactory.getExecutor(command2);
+        executor3 = CommandExeFactory.getExecutor(command3);
         courses = new TreeMap<>();
         registrationIdCourseMap = new HashMap<>();
         executor1.executeCommand(courses , registrationIdCourseMap , command1);
