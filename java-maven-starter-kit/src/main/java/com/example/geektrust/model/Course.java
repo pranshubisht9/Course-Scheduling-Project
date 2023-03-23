@@ -4,55 +4,35 @@ import java.util.Date;
 import java.util.Map;
 
 public class Course implements Comparable<Course>{
-    private String courseId;
-    private String courseName;
-    private String instructor;
-    private long minCap;
-    private long maxCap;
+    private final String courseId;
+    private final String courseName;
+    private final String instructor;
+    private final long minCap;
+    private final long maxCap;
 
     private boolean isCancel;
     private boolean isAlotted;
 
-    private Map<String , Employee> registerEmployee;
+    private final Map<String , Employee> registerEmployee;
 
     public String getCourseId() {
         return courseId;
-    }
-
-    public void setCourseId(String courseId) {
-        this.courseId = courseId;
     }
 
     public String getCourseName() {
         return courseName;
     }
 
-    public void setCourseName(String courseName) {
-        this.courseName = courseName;
-    }
-
     public String getInstructor() {
         return instructor;
-    }
-
-    public void setInstructor(String instructor) {
-        this.instructor = instructor;
     }
 
     public long getMinCap() {
         return minCap;
     }
 
-    public void setMinCap(long minCap) {
-        this.minCap = minCap;
-    }
-
     public long getMaxCap() {
         return maxCap;
-    }
-
-    public void setMaxCap(long maxCap) {
-        this.maxCap = maxCap;
     }
 
     public boolean isCancel() {
@@ -95,7 +75,13 @@ public class Course implements Comparable<Course>{
     public int compareTo(Course o) {
         return this.courseName.compareTo(o.courseName);
     }
-    public Course() {
+    public Course(String courseId, String courseName, String instructor, long minCap, long maxCap, Map<String, Employee> registerEmployee) {
+        this.courseId = courseId;
+        this.courseName = courseName;
+        this.instructor = instructor;
+        this.minCap = minCap;
+        this.maxCap = maxCap;
+        this.registerEmployee = registerEmployee;
     }
 
     public Course(String courseId, String courseName, String instructor, long minCap, long maxCap, boolean isCancel, boolean isAlotted, Map<String, Employee> registerEmployee, Date date) {

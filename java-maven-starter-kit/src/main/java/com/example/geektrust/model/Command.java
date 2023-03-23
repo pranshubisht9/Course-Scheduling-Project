@@ -4,10 +4,10 @@ import com.example.geektrust.enums.CommandOperator;
 
 import java.util.List;
 
+
 public class Command {
     private final CommandOperator inputCommand;
     private final List<String> commandParams;
-
     public Command(CommandOperator inputCommand, List<String> commandParams){
         this.inputCommand = inputCommand;
         this.commandParams = commandParams;

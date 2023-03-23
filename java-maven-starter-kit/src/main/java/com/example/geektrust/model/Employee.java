@@ -5,27 +5,9 @@ import com.example.geektrust.exception.InputErrorException;
 
 public class Employee {
 
-    private String name;
-    private String email;
+    private final String name;
+    private final String email;
 
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public Employee() {
-    }
 
     public Employee(String emailAddress) throws InputErrorException {
         if (FixedConstants.VALID_EMAIL_ADDRESS_REGEX.matcher(emailAddress).matches()) {
@@ -36,8 +18,11 @@ public class Employee {
         }
     }
 
-    public Employee(String name, String email) {
-        this.name = name;
-        this.email = email;
+    public String getName() {
+        return name;
+    }
+
+    public String getEmailAddress() {
+        return email;
     }
 }
