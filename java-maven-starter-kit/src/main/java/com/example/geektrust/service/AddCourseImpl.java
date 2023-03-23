@@ -27,10 +27,10 @@ public class AddCourseImpl implements CommandExecutor{
             String courseName = params.get(0);
             String courseInstructor = params.get(1);
             SimpleDateFormat inputFormat = new SimpleDateFormat("ddMMyyyy");
-            Date d = inputFormat.parse(params.get(2));
+            Date date = inputFormat.parse(params.get(2));
             int minCount = Integer.parseInt(params.get(3));
             int maxCount = Integer.parseInt(params.get(4));
-            course = new Course("OFFERING-"+courseName+"-"+courseInstructor,courseName , courseInstructor , d ,minCount , maxCount , false, false);
+            course = new Course("OFFERING-"+courseName+"-"+courseInstructor,courseName , courseInstructor , date ,minCount , maxCount , false, false);
         }catch (Exception e){
             throw new InputErrorException("INPUT_ERROR");
         }
@@ -41,5 +41,4 @@ public class AddCourseImpl implements CommandExecutor{
         courses.put(course.getCourseID(),course);
         System.out.println(course.getCourseID());
     }
-
 }

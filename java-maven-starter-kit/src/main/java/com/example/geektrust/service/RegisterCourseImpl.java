@@ -24,15 +24,12 @@ public class RegisterCourseImpl implements CommandExecutor{
                 if(course.getRegisterEmployees().size()==course.getMaxCapacity()){
                     throw new CourseException("COURSE_FULL_ERROR");
                 }else{
-                    //register the employee to course......
                     registerEmployeeToCourse(employee , course ,registrationIdCourseMap);
                 }
             }else{
-                //In case of course is allotted already
                 System.out.println("REG-COURSE-"+employee.getName()+"-"+courses.get(courseID).getCourseName()+" "+REJECTED);
             }
         }else{
-            //In case of course ID is not present in the course offering list.
             System.out.println("INPUT_DATA_ERROR");
         }
 

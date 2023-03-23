@@ -17,8 +17,8 @@ public class Course implements Comparable<Course>{
     private final Map<String , Employee> registerEmployees;
 
 
-    public Course(String courseID, String courseName, String instructor, Date date, int minCapacity, int maxCapacity, boolean isAllotted, boolean isCancelled) {
-        this.courseId = courseID;
+    public Course(String courseId, String courseName, String instructor, Date date, int minCapacity, int maxCapacity, boolean isAllotted, boolean isCancelled) {
+        this.courseId = courseId;
         this.courseName = courseName;
         this.instructor = instructor;
         this.date = date;
@@ -72,13 +72,14 @@ public class Course implements Comparable<Course>{
         return registerEmployees;
     }
 
+    @Override
+    public int compareTo(Course o) {
+        return this.courseName.compareTo(o.courseName);
+    }
+
     public String addEmployee(Employee e){
         String registrationID = "REG-COURSE-"+e.getName()+"-"+this.courseName;
         this.registerEmployees.put(registrationID , e);
         return registrationID;
-    }
-    @Override
-    public int compareTo(Course o) {
-        return this.courseName.compareTo(o.courseName);
     }
 }
